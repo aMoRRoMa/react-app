@@ -13,4 +13,4 @@ const xIsNext = (state = true, action) => {
   }
 }
 
-export default stepNumber
+export default xIsNext

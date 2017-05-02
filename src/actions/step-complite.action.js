@@ -1,8 +1,9 @@
-export const stepComplite = (step, square) => {
+export const stepComplite = (step, square, player) => {
   return {
     type: 'STEP_COPMLITE',
     step,
-    square
+    square,
+    player
   }
 
 }
