@@ -19,6 +19,9 @@ const history = (state = defaultHistory, action) => {
       if(step > 0) {
         return state.slice(0, step+1)
       }
+      else if(step == 0){
+        return defaultHistory
+      }
       else {
         return state
       }
