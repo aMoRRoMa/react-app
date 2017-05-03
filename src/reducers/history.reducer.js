@@ -13,7 +13,7 @@ const history = (state = defaultHistory, action) => {
     case 'STEP_COPMLITE':
       const current = state[action.step]
       const squares = current.squares.slice()
-      squares[action.square] = state.xIsNext ? 'X' : 'O'
+      squares[action.square] = action.player
       return state.concat([{squares: squares}])
 
     default:

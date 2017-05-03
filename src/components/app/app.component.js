@@ -10,10 +10,9 @@ import {calculateWinner} from '../../helpers'
 import Game from '../game/game.component.js'
 
 const mapStateToProps = (state) => {
-  console.log('state', state)
   return {
     squares: state.history[state.stepNumber].squares,
-    status: calculateWinner(state.history[state.stepNumber]) ? 'Winner: ' + calculateWinner(state.history[state.stepNumber]) : 'Next player: ' + (state.xIsNext ? 'X' : 'O'),
+    status: calculateWinner(state.history[state.stepNumber].squares) ? 'Winner: ' + calculateWinner(state.history[state.stepNumber].squares) : 'Next player: ' + (state.xIsNext ? 'X' : 'O'),
     step: state.stepNumber,
     player: state.xIsNext ? 'X' : 'O'
   }
