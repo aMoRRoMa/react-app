@@ -9,7 +9,7 @@ const Square = ({ onClick, value }) => (
 
 Square.propTypes = {
   onClick: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired
+  value: PropTypes.string
 }
 
 export default Square

@@ -1,8 +1,8 @@
-const stepNumber = (state = 1, action) => {
+const stepNumber = (state = 0, action) => {
   switch (action.type) {
 
     case 'STEP_COPMLITE':
-      return state++
+      return state + 1
 
     case 'JUMP_TO':
       return action.step

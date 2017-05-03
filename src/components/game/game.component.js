@@ -1,9 +1,10 @@
 import React from 'react'
 
-import {Board} from '../board/board.component.js'
+import Board from '../board/board.component.js'
 
-const Game = ({squares, onSquareClick, status, step, player}) => (
-  <div className="game">
+const Game = ({squares, onSquareClick, status, step, player}) => {
+  console.log('squares', squares)
+  return (<div className="game">
     <div className="game-board">
       <Board 
         squares={squares}
@@ -15,8 +16,8 @@ const Game = ({squares, onSquareClick, status, step, player}) => (
     <div className="game-info">
       <div>{status}</div>
     </div>
-  </div>
-)
+  </div> )
+}
 
 export default Game
 

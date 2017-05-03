@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import {Square} from '../square/square.component.js'
+import Square from '../square/square.component.js'
 
-const renderSquare = (squares, onClick, i, step, player) => (
-    <Square 
+const renderSquare = (squares, onClick, i, step, player) => {
+    console.log('step', step)
+    return (<Square 
       onClick={() => onClick(step, i, player)}
       value={squares[i]} 
-    />
-)
+    />)
+}
 
 const Board = ({squares, onClick, step, player}) => (
   <div>
@@ -33,7 +34,8 @@ const Board = ({squares, onClick, step, player}) => (
 Board.propTypes = {
   squares: PropTypes.arrayOf(PropTypes.string).isRequired,
   onClick: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired
+  step: PropTypes.number.isRequired,
+  player: PropTypes.string.isRequired
 }
 
 export default Board
