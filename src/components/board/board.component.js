@@ -3,13 +3,12 @@ import PropTypes from 'prop-types'
 
 import Square from '../square/square.component.js'
 
-const renderSquare = (squares, onClick, i, step, player) => {
-    console.log('step', step)
-    return (<Square 
-      onClick={() => onClick(step, i, player)}
-      value={squares[i]} 
-    />)
-}
+const renderSquare = (squares, onClick, i, step, player) => (
+  <Square 
+    onClick={() => onClick(step, i, player)}
+    value={squares[i]} 
+  />
+)
 
 const Board = ({squares, onClick, step, player}) => (
   <div>
