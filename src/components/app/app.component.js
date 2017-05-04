@@ -6,7 +6,10 @@ import {
 } from '../../actions'
 
 import {
-  movesSelector
+  movesSelector,
+  squaresSelector,
+  statusSelector,
+  playerSelector
 } from '../../selectors'
 
 import {calculateWinner} from '../../helpers'
@@ -16,10 +19,10 @@ import Game from '../game/game.component.js'
 const mapStateToProps = (state) => {
   return {
     moves: movesSelector(state),
-    squares: state.history[state.stepNumber].squares,
-    status: calculateWinner(state.history[state.stepNumber].squares) ? 'Winner: ' + calculateWinner(state.history[state.stepNumber].squares) : 'Next player: ' + (state.xIsNext ? 'X' : 'O'),
+    squares: squaresSelector(state),
+    status: statusSelector(state),
     step: state.stepNumber,
-    player: state.xIsNext ? 'X' : 'O'
+    player: playerSelector(state)
   }
 }
 
